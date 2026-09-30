@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Divya | Portfolio</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#09090f;
+    color:white;
+}
+
+/* NAVBAR */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:100;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:rgba(9,9,15,.85);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #252535;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#9b7cff;
+}
+
+nav a{
+    color:#aaa;
+    text-decoration:none;
+    margin-left:25px;
+}
+
+nav a:hover{
+    color:#9b7cff;
+}
+
+/* HERO */
+
+.hero{
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:70px 10%;
+
+    background:
+    radial-gradient(circle at 80% 20%,#33206b,transparent 30%),
+    radial-gradient(circle at 20% 80%,#241b4d,transparent 30%),
+    #09090f;
+}
+
+.hero-text{
+    max-width:650px;
+}
+
+.tag{
+    color:#9b7cff;
+    letter-spacing:3px;
+    font-size:14px;
+}
+
+.hero h1{
+    font-size:65px;
+    margin:20px 0;
+}
+
+.hero h1 span{
+    color:#9b7cff;
+}
+
+.hero h2{
+    color:#ccc;
+    font-weight:normal;
+}
+
+.hero p{
+    color:#9292a3;
+    line-height:1.8;
+    margin-top:20px;
+    font-size:17px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:14px 28px;
+    background:#9b7cff;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+}
+
+.btn:hover{
+    box-shadow:0 0 30px #9b7cff;
+}
+
+/* PROFILE */
+
+.profile{
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:linear-gradient(135deg,#9b7cff,#5c3fc7);
+
+    font-size:100px;
+
+    box-shadow:
+    0 0 50px rgba(155,124,255,.35);
+}
+
+/* SECTIONS */
+
+section{
+    padding:90px 10%;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.title h2{
+    font-size:38px;
+}
+
+.title p{
+    color:#888;
+    margin-top:10px;
+}
+
+/* ABOUT */
+
+.about{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+}
+
+.about p{
+    color:#aaa;
+    line-height:2;
+    font-size:18px;
+}
+
+/* SKILLS */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.card{
+    background:#11111b;
+    border:1px solid #272737;
+    padding:30px;
+    border-radius:20px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#9b7cff;
+    box-shadow:0 10px 30px rgba(155,124,255,.12);
+}
+
+.icon{
+    font-size:45px;
+    margin-bottom:18px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#858594;
+    line-height:1.6;
+}
+
+/* PROJECTS */
+
+.project{
+    min-height:230px;
+}
+
+.project a{
+    display:inline-block;
+    margin-top:20px;
+    color:#9b7cff;
+    text-decoration:none;
+}
+
+/* STATS */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    text-align:center;
+}
+
+.stat{
+    background:#11111b;
+    padding:30px 15px;
+    border-radius:18px;
+    border:1px solid #272737;
+}
+
+.stat h2{
+    color:#9b7cff;
+    font-size:35px;
+}
+
+.stat p{
+    color:#888;
+    margin-top:8px;
+}
+
+/* CONTACT */
+
+.contact{
+    text-align:center;
+}
+
+.contact-box{
+    max-width:700px;
+    margin:auto;
+    padding:45px;
+    background:linear-gradient(135deg,#151525,#10101a);
+    border:1px solid #302d4a;
+    border-radius:25px;
+}
+
+.contact-box p{
+    color:#999;
+    margin-top:15px;
+}
+
+.links{
+    margin-top:25px;
+}
+
+.links a{
+    display:inline-block;
+    margin:8px;
+    padding:12px 20px;
+    border:1px solid #9b7cff;
+    border-radius:25px;
+    color:#9b7cff;
+    text-decoration:none;
+}
+
+.links a:hover{
+    background:#9b7cff;
+    color:white;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:30px;
+    border-top:1px solid #222230;
+    color:#666;
+}
+
+/* MOBILE */
+
+@media(max-width:750px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav a{
+        margin:8px;
+    }
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        gap:50px;
+    }
+
+    .hero h1{
+        font-size:45px;
+    }
+
+    .profile{
+        width:200px;
+        height:200px;
+        font-size:70px;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo">
+DIVYA<span>.</span>
+</div>
+
+<div>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<div class="hero">
+
+<div class="hero-text">
+
+<p class="tag">WELCOME TO MY PORTFOLIO</p>
+
+<h1>
+Hi, I'm <span>Divya</span> 👋
+</h1>
+
+<h2>
+Student • Developer • Creator
+</h2>
+
+<p>
+I enjoy exploring technology, developing my skills
+and creating simple solutions for real-world problems.
+</p>
+
+<a href="#projects" class="btn">
+View My Projects →
+</a>
+
+</div>
+
+
+<div class="profile">
+👩‍💻
+</div>
+
+</div>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="title">
+
+<h2>About Me</h2>
+
+<p>Get to know me</p>
+
+</div>
+
+<div class="about">
+
+<p>
+I am a college student interested in programming,
+web development and technology. I enjoy learning
+new concepts, working on projects and continuously
+improving my technical and communication skills.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<div class="title">
+
+<h2>My Skills</h2>
+
+<p>Technologies I'm learning</p>
+
+</div>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<div class="icon">🐍</div>
+
+<h3>Python</h3>
+
+<p>
+Programming, logic building and problem solving.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🌐</div>
+
+<h3>HTML & CSS</h3>
+
+<p>
+Creating responsive and attractive websites.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🗄️</div>
+
+<h3>SQL</h3>
+
+<p>
+Database design, queries and management.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">💻</div>
+
+<h3>C Programming</h3>
+
+<p>
+Strong programming fundamentals and logic.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🐙</div>
+
+<h3>GitHub</h3>
+
+<p>
+Project hosting and version control.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🧠</div>
+
+<h3>Problem Solving</h3>
+
+<p>
+Breaking problems into simple solutions.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- STATS -->
+
+<section>
+
+<div class="title">
+
+<h2>My Progress</h2>
+
+<p>A few milestones</p>
+
+</div>
+
+
+<div class="stats">
+
+<div class="stat">
+<h2>5+</h2>
+<p>Technologies</p>
+</div>
+
+<div class="stat">
+<h2>3+</h2>
+<p>Projects</p>
+</div>
+
+<div class="stat">
+<h2>10+</h2>
+<p>Skills Practiced</p>
+</div>
+
+<div class="stat">
+<h2>∞</h2>
+<p>Ideas</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<div class="title">
+
+<h2>Featured Projects</h2>
+
+<p>Some things I've worked on</p>
+
+</div>
+
+
+<div class="grid">
+
+
+<div class="card project">
+
+<div class="icon">📚</div>
+
+<h3>Library Management System</h3>
+
+<p>
+A database project using SQL to manage
+books, publishers and library records.
+</p>
+
+<a href="#">View Project →</a>
+
+</div>
+
+
+<div class="card project">
+
+<div class="icon">🌐</div>
+
+<h3>Personal Portfolio</h3>
+
+<p>
+A responsive personal portfolio website
+hosted using GitHub Pages.
+</p>
+
+<a href="#">View Project →</a>
+
+</div>
+
+
+<div class="card project">
+
+<div class="icon">💡</div>
+
+<h3>Innovation Project</h3>
+
+<p>
+A technology-based idea focused on solving
+a real-world problem.
+</p>
+
+<a href="#">View Project →</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="title">
+
+<h2>Let's Connect</h2>
+
+<p>Have a project or idea?</p>
+
+</div>
+
+
+<div class="contact-box">
+
+<h2>Let's build something interesting 🚀</h2>
+
+<p>
+I'm always interested in learning,
+connecting and exploring new ideas.
+</p>
+
+
+<div class="links">
+
+<a href="mailto:yourmail@gmail.com">
+📧 Email
+</a>
+
+<a href="https://github.com/">
+🐙 GitHub
+</a>
+
+<a href="https://linkedin.com/">
+💼 LinkedIn
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+© 2026 Divya. Designed & Built with HTML + CSS.
+
+</footer>
+
+</body>
+</html>
